@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;900&display=swap');
+@import './mixins';
+@import './var';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    @include flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: darkgray;
+}
+// citrina ir kaina
+.banner-logo{
+    @include flex;
+    @include flex;
+    width: 900px;
+    height: 300px;
+    background-image: url(../img/background-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid white;
+    flex-direction: row;
+    .badge{
+        width: 150px;
+        height: 160px;
+        background-color: $textColor;
+        border-radius: 50% 10%;
+        @include flex;
+        flex-wrap: wrap;
+        position: relative;
+        span{
+            position: absolute;
+            top: -3px;
+            left: 70px;
+            filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+        }
+        .ribbon{
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: black;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+            &::before{
+                content: '';
+                position: absolute;
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(to top, #000000 0%, #B5B5B5 100%);
+            }
+            span{
+                left: 0px;
+                top: 1px;
+                color: white;
+                font-size: 0.8rem;
+                text-align: center;
+                line-height: 18px;
+                display: block;
+                margin-top: 1px;
+            }
+        }
+        .price p{
+            font-weight: 700;
+            font-size: 5rem;
+        }
+        div p{
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .price-2  {
+            @include flex;
+            flex-direction: column;
+        }
+    }
+}
+// tekstas
+.banner-logo{
+    .text{
+        color: white;
+        margin-left: 50px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        width: 50%;
+        line-height: 98%;
+        span{
+            color: $textColor;
+        }
+    }
+}
+// citrinos logo ir mygtukas
+.logo-button{
+    @include flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 30px;
+    .logo{
+        width: 70px;
+        height: 70px;
+        background-color: $textColor;
+        border-radius: 50% 10%;
+        border: 0.3rem black solid;
+        @include flex;
+        p{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+    .button{
+        width: 150px;
+        height: 70px;
+        background-color: #f06002;
+        @include flex;
+        p{
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: white;
+        }
+    }
+}
